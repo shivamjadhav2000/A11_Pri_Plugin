@@ -3,9 +3,10 @@ const fetch = require('node-fetch');
 const express = require('express');
 const bodyParser = require('body-parser');
 const { type } = require('os');
-const { Console } = require('console');
 const { response } = require('express');
 const app = express();
+require('dotenv').config();
+
 app.use(bodyParser.json());
 var json = require('../atlassian-connect.json');
 
@@ -59,8 +60,7 @@ app.post('/predict', (req, res) => {
     var total_issue_text = title + " " + desc;
     var parsed_issue_text = total_issue_text.replaceAll(/\s/g, '%20');
     var parsed_issue_text1 = parsed_issue_text.replaceAll('"', '');
-    console.log(parsed_issue_text1);
-    fetch(`${process.env.backend}/predict?issue=${parsed_issue_text1}`, {
+    fetch(`${process.env.BACKEND_URL}/predict?issue=${parsed_issue_text1}`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json'
@@ -91,7 +91,6 @@ app.post('/predict', (req, res) => {
                 "Yes": priority2,
             };
 
-            console.log(results, Label);
             res.json(results);
         })
         .catch(error => {

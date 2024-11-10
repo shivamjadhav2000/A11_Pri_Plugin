@@ -25,7 +25,7 @@ function predict() {
                     "title": title
                 });
 
-                let fetch_url = `${plugin_url}/predict`;
+                let fetch_url = `${process.env.PLUGIN_URL}/predict`;
                 let settings = {
                     method: "POST",
                     body: issue_data,
