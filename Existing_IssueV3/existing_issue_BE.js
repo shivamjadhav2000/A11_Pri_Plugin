@@ -71,15 +71,11 @@ app.post('/predict', (req, res) => {
             // Extract priority values
             var priority1 = parseFloat(data["priority 1"]);
             var priority2 = parseFloat(data["priority 2"]);
-            var priority3 = parseFloat(data["priority 3"]);
-            var priority4 = parseFloat(data["priority 4"]);
-            var priority5 = parseFloat(data["priority 5"]);
-
+            var Label=data["Label"];
             // Determine highest priority
-            var label = "";
+            var priorities = { "No": priority1, "Yes": priority2 };
             var confidence = 0;
-            var priorities = { "priority 1": priority1, "priority 2": priority2, "priority 3": priority3, "priority 4": priority4, "priority 5": priority5 };
-
+            var label = '';
             for (const [key, value] of Object.entries(priorities)) {
                 if (value > confidence) {
                     confidence = value;
@@ -91,11 +87,8 @@ app.post('/predict', (req, res) => {
             var results = {
                 "label": label,
                 "confidence": confidence,
-                "priority1": priority1,
-                "priority2": priority2,
-                "priority3": priority3,
-                "priority4": priority4,
-                "priority5": priority5
+                "No": priority1,
+                "Yes": priority2,
             };
 
             console.log(results);
