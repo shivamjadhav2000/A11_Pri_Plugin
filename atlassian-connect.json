@@ -1,0 +1,43 @@
+{
+    "name": "Issue Labeler",
+    "description": "Issue classification tool. Classifies new or existing issues into one of three classes: Bug, Improvement, or New Feature. This tool classifies issues based on their titles (summaries) and descriptions using an NLP model based on Google Open-AI's pre-trained BERT model.",
+    "key": "predictool.app",
+    "baseUrl": "https://issue-labeler-plugin.herokuapp.com/",
+    "vendor": {
+        "name": "Prince Mohammad Bin Fahd University",
+        "url": "https://pmu.edu.sa"
+    },
+    "authentication": {
+        "type": "none"
+    },
+    "apiVersion": 1,
+    "modules": {
+        "jiraIssueContents": [
+            {
+                "icon": {
+                    "width": 16,
+                    "height": 16,
+                    "url": "https://issue-labeler-plugin.herokuapp.com/app_icon"
+                },
+                "target": {
+                    "type": "web_panel",
+                    "url": "https://issue-labeler-plugin.herokuapp.com/Existing_IssueV3"
+                },
+                "tooltip": {
+                    "value": "Check Label Accuracy"
+                },
+                "name": {
+                    "value": "Label Accuracy"
+                },
+                "key": "classify-existing-issue",
+                "conditions": [
+                    {
+                        "condition": "user_is_logged_in"
+                    }
+                ]
+            }
+        ]
+    },
+    "scopes": ["READ", "WRITE", "ADMIN"]
+}
+

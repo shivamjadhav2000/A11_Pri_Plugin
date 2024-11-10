@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <script src="https://connect-cdn.atl-paas.net/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@atlaskit/css-reset@2.0.0/dist/bundle.css" media="all">
+    <script src="http://localhost:8083/js"></script>
+    <style>
+        #predict {
+            width: 45%;
+            border: 1px solid rgba(204, 204, 204, 0.938);
+            padding: 10px;
+            display: inline-block
+        }
+
+        #icon {
+            width: 18;
+            height: 18;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 4px;
+        }
+
+        #result {
+            text-align: right;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin: 5px;
+        }
+
+        .correct1 {
+            width: 60%;
+            text-align: left;
+        }
+
+        .other {
+            width: 60%;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgb(172, 238, 172);
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+        td {
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+        #icon-span:hover {
+            cursor: help;
+        }
+
+        #icon-span span {
+            display: none;
+        }
+
+        #icon-span:hover span {
+            border: 1px dotted #c0c0c0;
+            padding: 5px 20px 5px 5px;
+            display: block;
+            z-index: 100;
+            left: 350px;
+            margin: 10px;
+            width: 250px;
+            color: black;
+            position: absolute;
+            top: 10px;
+            text-decoration: none;
+        }
+
+        #right {
+            background: rgb(174, 223, 174);
+        }
+
+        #wrong {
+            background: rgb(247, 179, 179);
+        }
+
+        /*STARS TOOLTIP ON HOVER*/
+        /*figure it out!*/
+
+        /*STARS CSS*/
+        .ratings {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            color: #b1b1b1;
+            overflow: hidden;
+            margin-left: 30px;
+        }
+
+        .full-stars {
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #fde16d;
+        }
+
+        .empty-stars:before,
+        .full-stars:before {
+            content: "\2605\2605\2605";
+            font-size: 14pt;
+        }
+
+        .empty-stars:before {
+            -webkit-text-stroke: 1px #848484;
+        }
+
+        .full-stars:before {
+            -webkit-text-stroke: 1px orange;
+        }
+
+        /* Webkit-text-stroke is not supported on firefox or IE */
+
+        /* Firefox */
+        @-moz-document url-prefix() {
+            .full-stars {
+                color: #ECBE24;
+            }
+        }
+
+        /* IE 
+            <!--[if IE]> .full-stars {
+                color: #ECBE24;
+            }
+            <![endif]-->*/
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="predict">
+        <table id="result"></table>
+    </div>
+    <span id="icon-span"><img id="icon" src="" /></span>
+</body>
+
+</html>
