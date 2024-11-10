@@ -60,7 +60,7 @@ app.post('/predict', (req, res) => {
     var parsed_issue_text = total_issue_text.replaceAll(/\s/g, '%20');
     var parsed_issue_text1 = parsed_issue_text.replaceAll('"', '');
     console.log(parsed_issue_text1);
-    fetch(`https://shivamjadhav-albert-latest-96.hf.space/predict?issue=${parsed_issue_text1}`, {
+    fetch(`${process.env.backend}/predict?issue=${parsed_issue_text1}`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json'
@@ -91,7 +91,7 @@ app.post('/predict', (req, res) => {
                 "Yes": priority2,
             };
 
-            console.log(results);
+            console.log(results, Label);
             res.json(results);
         })
         .catch(error => {

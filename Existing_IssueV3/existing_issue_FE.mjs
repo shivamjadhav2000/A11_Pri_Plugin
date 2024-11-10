@@ -25,7 +25,7 @@ function predict() {
                     "title": title
                 });
 
-                let fetch_url = "https://huggingface.co/spaces/shivamjadhav/albert_latest_96/predict";
+                let fetch_url = `${plugin_url}/predict`;
                 let settings = {
                     method: "POST",
                     body: issue_data,
