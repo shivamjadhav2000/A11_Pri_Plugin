@@ -26,7 +26,6 @@ function predict() {
                 });
 
                 let fetch_url = `https://a11-pri-plugin.onrender.com/predict`;
-                console.log(fetch_url,'fetch url heer');
                 let settings = {
                     method: "POST",
                     body: issue_data,
@@ -51,17 +50,17 @@ function predict() {
                     res_tab.innerHTML = `
                         <tr><th>Label</th><td>${label}</td></tr>
                         <tr><th>Confidence</th><td>${(confidence * 100).toFixed(2)}%</td></tr>
-                        <tr><th>No</th><td>${priority1}</td></tr>
-                        <tr><th>Yes</th><td>${priority2}</td></tr>
+                        <tr><th>No</th><td>${(priority1).toFixed(2)}%}</td></tr>
+                        <tr><th>Yes</th><td>${(priority2).toFixed(2)}%}</td></tr>
                     `;
 
                     // Display warning or success icon based on the label
-                    if (label === "Bug") {
+                    if (label === "Yes") {
                         document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/correct";
-                        document.getElementById("icon-span").innerHTML = `<span id='right'>The issue is identified as a Bug!</span>`;
+                        document.getElementById("icon-span").innerHTML = `<span id='right'>The issue is identified as a Accessibility</span>`;
                     } else {
                         document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/warning";
-                        document.getElementById("icon-span").innerHTML = `<span id='wrong'>The issue is not identified as a Bug.</span>`;
+                        document.getElementById("icon-span").innerHTML = `<span id='wrong'>The issue is not identified as not an Accessibility.</span>`;
                     }
 
                     var dummyText = "";
