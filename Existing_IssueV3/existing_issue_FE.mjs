@@ -59,11 +59,24 @@ function predict() {
                     if (label === "Yes") {
                         console.log("YES");
                         document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/correct";
-                        document.getElementById("icon-span").innerHTML = `<span id='right'>The issue is identified as a Accessibility</span>`;
+                    
+                        // Clear existing content before appending
+                        document.getElementById("icon-span").innerHTML = '';
+                        let span = document.createElement('span');
+                        span.id = 'right';
+                        span.textContent = 'The issue is identified as an Accessibility';
+                        document.getElementById("icon-span").appendChild(span);
                     } else {
                         document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/warning";
-                        document.getElementById("icon-span").innerHTML = `<span id='wrong'>The issue is not identified as not an Accessibility.</span>`;
+                    
+                        // Clear existing content before appending
+                        document.getElementById("icon-span").innerHTML = '';
+                        let span = document.createElement('span');
+                        span.id = 'wrong';
+                        span.textContent = 'The issue is not identified as an Accessibility.';
+                        document.getElementById("icon-span").appendChild(span);
                     }
+                    
 
                     var dummyText = "";
                     return dummyText;
