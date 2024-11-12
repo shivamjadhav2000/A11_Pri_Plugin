@@ -26,7 +26,7 @@ function predict() {
                     "title": title
                 });
 
-                let fetch_url = `${process.env.PLUGIN_URL}/predict`;
+                let fetch_url = `https://a11-pri-plugin.onrender.com/predict`;
                 console.log(fetch_url,'fetch url heer');
                 let settings = {
                     method: "POST",
