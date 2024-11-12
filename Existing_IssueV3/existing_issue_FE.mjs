@@ -1,5 +1,6 @@
 function init() {
     predict();
+    console.log("INITIALIZED");
 }
 
 var span_check = 0;
@@ -26,6 +27,7 @@ function predict() {
                 });
 
                 let fetch_url = `${process.env.PLUGIN_URL}/predict`;
+                console.log(fetch_url,'fetch url heer');
                 let settings = {
                     method: "POST",
                     body: issue_data,
@@ -44,6 +46,7 @@ function predict() {
                     var confidence = prediction.confidence;
                     var priority1 = prediction.priority1;
                     var priority2 = prediction.priority2;
+                    console.log("PREDICTION: ", prediction);
 
                     // Display results in a simple format
                     var res_tab = document.getElementById("result");
