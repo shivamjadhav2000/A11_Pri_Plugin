@@ -44,8 +44,8 @@ function predict() {
                     var prediction = JSON.parse(JSON.stringify(json));
                     var label = prediction.label;
                     var confidence = prediction.confidence;
-                    var priority1 = prediction.priority1;
-                    var priority2 = prediction.priority2;
+                    var priority1 = prediction.No;
+                    var priority2 = prediction.Yes;
                     console.log("PREDICTION: ", prediction);
 
                     // Display results in a simple format
@@ -53,16 +53,16 @@ function predict() {
                     res_tab.innerHTML = `
                         <tr><th>Label</th><td>${label}</td></tr>
                         <tr><th>Confidence</th><td>${(confidence * 100).toFixed(2)}%</td></tr>
-                        <tr><th>Priority 1</th><td>${priority1}</td></tr>
-                        <tr><th>Priority 2</th><td>${priority2}</td></tr>
+                        <tr><th>No</th><td>${priority1}</td></tr>
+                        <tr><th>Yes</th><td>${priority2}</td></tr>
                     `;
 
                     // Display warning or success icon based on the label
                     if (label === "Bug") {
-                        document.getElementById("icon").src = "http://localhost:8083/correct";
+                        document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/correct";
                         document.getElementById("icon-span").innerHTML = `<span id='right'>The issue is identified as a Bug!</span>`;
                     } else {
-                        document.getElementById("icon").src = "http://localhost:8083/warning";
+                        document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/warning";
                         document.getElementById("icon-span").innerHTML = `<span id='wrong'>The issue is not identified as a Bug.</span>`;
                     }
 
