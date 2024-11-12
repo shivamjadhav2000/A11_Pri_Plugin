@@ -50,8 +50,8 @@ function predict() {
                     res_tab.innerHTML = `
                         <tr><th>Label</th><td>${label}</td></tr>
                         <tr><th>Confidence</th><td>${(confidence * 100).toFixed(2)}%</td></tr>
-                        <tr><th>No</th><td>${(priority1).toFixed(2)}%}</td></tr>
-                        <tr><th>Yes</th><td>${(priority2).toFixed(2)}%}</td></tr>
+                        <tr><th>No</th><td>${(priority1*100).toFixed(2)}%</td></tr>
+                        <tr><th>Yes</th><td>${(priority2*100).toFixed(2)}%</td></tr>
                     `;
 
                     // Display warning or success icon based on the label
