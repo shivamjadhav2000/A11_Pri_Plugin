@@ -48,14 +48,16 @@ function predict() {
                     // Display results in a simple format
                     var res_tab = document.getElementById("result");
                     res_tab.innerHTML = `
-                        <tr><th>Label</th><td>${label}</td></tr>
-                        <tr><th>Confidence</th><td>${(confidence * 100).toFixed(2)}%</td></tr>
-                        <tr><th>No</th><td>${(priority1*100).toFixed(2)}%</td></tr>
-                        <tr><th>Yes</th><td>${(priority2*100).toFixed(2)}%</td></tr>
+                        <tr><th> Label</th><td>${label}</td></tr>
+                        <tr><th> Confidence</th><td>${(confidence * 100).toFixed(2)}%</td></tr>
+                        <tr><th> No</th><td>${(priority1*100).toFixed(2)}%</td></tr>
+                        <tr><th> Yes</th><td>${(priority2*100).toFixed(2)}%</td></tr>
                     `;
 
                     // Display warning or success icon based on the label
+                    console.log(label,"<<<<<------");
                     if (label === "Yes") {
+                        console.log("YES");
                         document.getElementById("icon").src = "https://a11-pri-plugin.onrender.com/correct";
                         document.getElementById("icon-span").innerHTML = `<span id='right'>The issue is identified as a Accessibility</span>`;
                     } else {
