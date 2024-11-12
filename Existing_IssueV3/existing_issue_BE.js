@@ -73,7 +73,7 @@ app.post('/predict', (req, res) => {
             var priority2 = parseFloat(data["priority 2"]);
             var Label=data["Label"];
             // Determine highest priority
-            var priorities = { "No": priority1, "Yes": priority2 };
+            var priorities = { "No": Number(priority1).toFixed(2), "Yes": Number(priority2).toFixed(2) };
             var confidence = 0;
             var label = '';
             for (const [key, value] of Object.entries(priorities)) {

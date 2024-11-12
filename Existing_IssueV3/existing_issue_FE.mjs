@@ -1,6 +1,5 @@
 function init() {
     predict();
-    console.log("INITIALIZED");
 }
 
 var span_check = 0;
@@ -46,7 +45,6 @@ function predict() {
                     var confidence = prediction.confidence;
                     var priority1 = prediction.No;
                     var priority2 = prediction.Yes;
-                    console.log("PREDICTION: ", prediction);
 
                     // Display results in a simple format
                     var res_tab = document.getElementById("result");
