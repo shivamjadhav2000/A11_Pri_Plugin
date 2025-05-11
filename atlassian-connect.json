@@ -2,7 +2,7 @@
     "name": "Issue Labeler",
     "description": "Issue classification tool. This tool helps to classify the issue based on the description and title of the issue. Uses Albert Model for Text Classification.",
     "key": "predictool.app",
-    "baseUrl": "https://a11-pri-plugin.onrender.com",
+    "baseUrl": "https://a11-pri-plugin.onrender.com/",
     "vendor": {
         "name": "Shivam Jadhav UNIVERSITY OF NORTH TEXAS",
         "url": "https://unt.edu"
@@ -21,7 +21,7 @@
                 },
                 "target": {
                     "type": "web_panel",
-                    "url": "/Existing_IssueV3"
+                    "url": "https://a11-pri-plugin.onrender.com/Existing_IssueV3"
                 },
                 "tooltip": {
                     "value": "Check Label Accuracy"

@@ -23,9 +23,7 @@ app.use(allowCrossDomain);
 app.get('/install', (req, res) => {
     res.json(json);
 });
-app.get('/atlassian-connect.json', (req, res) => {
-    res.json(json);
-});
+
 //SERVE PLUGIN HTML
 app.get("/Existing_IssueV3", (req, res) => {
     res.sendFile(__dirname + "/existing_issue_FE.htm");
